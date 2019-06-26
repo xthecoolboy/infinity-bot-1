@@ -5,5 +5,7 @@ Infinity Bot
 <br>
 <br>
 `This bot is made by JockeRider199#2627(489495461472894996)` and `Kara >> [Myel] | IKO#0822(415968332093718539)`
+
 <br>
+
 This bot works with Discord.js v12.0.0-dev
