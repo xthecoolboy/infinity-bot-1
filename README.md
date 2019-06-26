@@ -1,7 +1,7 @@
 Infinity Bot
 ==================
 
-<img src="https://cdn.discordapp.com/icons/591537647994798101/a85984646942ed4f2202ffac114b7218.png" style="vertical-align:middle; margin-right:10px; width:100px; height:100px; border-radius:50%; margin-left:10px"> <img src="https://img.shields.io/badge/node--js-10.16.0-success.svg"> <img src="https://img.shields.io/badge/npm-6.9.0-red.svg"> <img src="https://img.shields.io/badge/discord.js-12.0.0-blue.svg">
+<img src="https://cdn.discordapp.com/icons/591537647994798101/a85984646942ed4f2202ffac114b7218.png"> <img src="https://img.shields.io/badge/node--js-10.16.0-success.svg"> <img src="https://img.shields.io/badge/npm-6.9.0-red.svg"> <img src="https://img.shields.io/badge/discord.js-12.0.0-blue.svg">
     <br>
     <br>
     <div class="blue">
