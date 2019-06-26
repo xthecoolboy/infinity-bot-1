@@ -52,6 +52,10 @@ function loadDbs(){
 client.login(config.token);
 
 client.on("ready", () => {
+    if(Discord.version != "12.0.0-dev"){
+        logger.alert("This is not the 12.0.0 discord.js !")
+        return client.destroy()
+    }
     loadCmds()
     loadDbs()
     setTimeout(() => {
