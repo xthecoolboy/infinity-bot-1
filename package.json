@@ -1,0 +1,30 @@
+{
+    "name": "infinity-bot",
+    "version": "0.0.1",
+    "description": "A discord bot for the Discord Hacking Week",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node index.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/discord-hack-week-jocke-iko/le-bot.git"
+    },
+    "authors": "Jockerider199 & Iko",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/discord-hack-week-jocke-iko/le-bot/issues"
+    },
+    "homepage": "https://github.com/discord-hack-week-jocke-iko/le-bot#readme",
+    "dependencies": {
+      "chalk": "^2.4.2",
+      "discord.js": "github:discordjs/discord.js",
+      "fs": "^0.0.1-security",
+      "moment": "^2.24.0",
+      "ms": "^2.1.2",
+      "discord-backup" : "^1.0.4",
+      "lowdb" : "^1.0.0"
+    }
+  }
+  
