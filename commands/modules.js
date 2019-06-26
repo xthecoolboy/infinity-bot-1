@@ -14,12 +14,13 @@ exports.execute = (client, msg, args, config) => {
 
     if(!db.has(msg.guild.id).value()){
         db.set(msg.guild.id, {
-            detectAndBanSelfbots : false
+            detectAndBanSelfbots : false,
+            enableBlacklist : false
         }).write()
     }
     
 
-    var modules = ["detectAndBanSelfbots"]
+    var modules = ["detectAndBanSelfbots", "enableBlacklist", "enableCaptcha"]
     var chosenModule = args[1]
     var status = args[2]
     var truefalse = ["true", "false"]  
@@ -60,7 +61,7 @@ exports.info = {
 }
 
 exports.help = {
-    desc : "Enable/disable modules\nList of modules : detectAndBanSelfbots, ...",
+    desc : "Enable/disable modules\nList of modules : \n- detectAndBanSelfbots;\n- enableBlacklist;\n- enableCaptcha",
     usage : config.prefix + "modules <module name> <true | false>",
     ex : config.prefix + "modules detectAndBanSelfbots false",
     cat : "admin"

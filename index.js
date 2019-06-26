@@ -15,6 +15,7 @@ var cooldown = new Set()
 /////////////////////////////////FUNCTIONS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 var logger = require("./functions/console-logger");
 var selfbots = require("./functions/selfbot");
+var number = require("./functions/makeid.js");
 
 /////////////////////////////////COMMANDS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 client.commands = [];
@@ -183,6 +184,39 @@ client.on("message", msg => {
             }
         }
     })
+})
+
+client.on("guildMemberAdd", member => {
+    var adapter = new FileSync("./database/modules.json")
+    var modules = low(adapter)
+
+    if(!modules.has(member.guild.id).value() || modules.get(member.guild.id).get("enableCaptcha").value() != true) return;
+
+    var adapter2 = new FileSync("./database/captcha.json");
+    var db = low(adapter2)
+
+    var channel = member.guild.channels.get(db.get("guilds").get(member.guild.id).get("channel").value())
+    var role = member.guild.roles.get(db.get("guilds").get(member.guild.id).get("role").value())
+
+    if(
+        !channel ||
+        !role
+    ) return;
+
+    member.roles.add(role.id).then(() => {
+        var embed = new Discord.MessageEmbed()
+            .setColor(config.embed.color)
+            .setAuthor("Captcha", client.user.avatarURL())
+            .setTitle(`Welcome in this server ${member.user.username} !`)
+            .setDescription(`Please made the command : \`${config.prefix}verif\` to get your captcha code.\nAnd then, send the command : ${config.prefix}verif <your_code> in this channel`)
+            .setFooter(config.embed.footer)
+        channel.send(embed);
+
+        setTimeout(() => {
+            if(member.roles.has(role.id)) member.kick("Captcha Timeout")
+        }, ms("10min"))
+    })
+
 })
 
 

@@ -24,6 +24,8 @@ exports.execute = (client, msg, args, config) => {
                 case "mod":
                     modCmds.push("`" + cmd.info.name + `\``)
                     break;
+                case "invisible":
+                    break;
                 default:
                     othersCmds.push("`" + cmd.info.name + `\``);
                     break;

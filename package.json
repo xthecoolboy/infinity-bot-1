@@ -9,14 +9,14 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/discord-hack-week-jocke-iko/le-bot.git"
+      "url": "git+https://github.com/discord-hack-week-jocke-iko/infinity-bot.git"
     },
     "authors": "Jockerider199 & Iko",
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/discord-hack-week-jocke-iko/le-bot/issues"
+      "url": "https://github.com/discord-hack-week-jocke-iko/infinity-bot/issues"
     },
-    "homepage": "https://github.com/discord-hack-week-jocke-iko/le-bot#readme",
+    "homepage": "https://github.com/discord-hack-week-jocke-iko/infinity-bot#readme",
     "dependencies": {
       "chalk": "^2.4.2",
       "discord.js": "github:discordjs/discord.js",
