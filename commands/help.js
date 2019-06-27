@@ -6,7 +6,7 @@ exports.execute = (client, msg, args, config) => {
     msg.delete().catch(() => {});
 
     if(!args[1]){ // Simple menu
-        
+
         var infoCmds = []
         var adminCmds = []
         var modCmds = []
@@ -14,21 +14,25 @@ exports.execute = (client, msg, args, config) => {
 
         client.commands.forEach(cmd => {
 
-            switch(cmd.help.cat){
-                case "info":
-                    infoCmds.push("`" + cmd.info.name + `\``)
-                    break;
-                case "admin":
-                    adminCmds.push("`" + cmd.info.name + `\``)
-                    break;
-                case "mod":
-                    modCmds.push("`" + cmd.info.name + `\``)
-                    break;
-                case "invisible":
-                    break;
-                default:
-                    othersCmds.push("`" + cmd.info.name + `\``);
-                    break;
+            try {
+                switch(cmd.help.cat){
+                    case "info":
+                        infoCmds.push("`" + cmd.info.name + `\``)
+                        break;
+                    case "admin":
+                        adminCmds.push("`" + cmd.info.name + `\``)
+                        break;
+                    case "mod":
+                        modCmds.push("`" + cmd.info.name + `\``)
+                        break;
+                    case "invisible":
+                        break;
+                    default:
+                        othersCmds.push("`" + cmd.info.name + `\``);
+                        break;
+                }
+            }catch(e){
+                console.log(`A command hasn't a category ! It's ${cmd.info.name} !`)
             }
         })
 

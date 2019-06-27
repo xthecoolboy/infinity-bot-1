@@ -15,12 +15,11 @@ var cooldown = new Set()
 /////////////////////////////////FUNCTIONS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 var logger = require("./functions/console-logger");
 var selfbots = require("./functions/selfbot");
-var number = require("./functions/makeid.js");
+var random = require("./functions/utils");
 
 /////////////////////////////////COMMANDS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-client.commands = [];
-
 function loadCmds(){
+    client.commands = [];
     fs.readdir("./commands/", (err, files) => {
         if(err) console.log(err);
         files.forEach(f => {
@@ -138,36 +137,6 @@ client.on("message", msg => {
 
     var args = msg.content.substring(config.prefix.length).split(" ");
     var cmdName = args[0].toLowerCase();
-    
-    if(cmdName == "restart"){
-        if(!config.OwnersID.includes(msg.author.id)) return;
-
-        msg.delete().catch(() => {})
-
-        msg.channel.send(config.code.red + "Client is restarting !" + config.code.end).then(() => {
-            client.destroy()
-        }).then(() => {
-            setTimeout(() => {
-                client.login(config.token)
-                msg.channel.send(config.code.green + "Client restared" + config.code.end)
-            }, ms("2s"))
-        })
-    }
-
-    if(cmdName == "refresh"){
-        if(!config.OwnersID.includes(msg.author.id)) return;
-        msg.delete()
-        loadCmds()
-        loadDbs()
-        msg.channel.send("Databases and commands are reloaded !")
-    }
-
-    if(cmdName == "destroy"){
-        if(!config.OwnersID.includes(msg.author.id)) return;
-        msg.delete()
-        console.log(chalk.red.bold("Client destroyed !"))
-        client.destroy()
-    }
 
     client.commands.forEach(command => {
         if(cmdName == command.info.name || command.info.alias.includes(cmdName)){
