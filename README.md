@@ -9,6 +9,9 @@ Infinity Bot
 <img src="https://img.shields.io/badge/discord.js-12.0.0-blue.svg">
 ### Infinity Bot is here to help you in everyday life on Discord, it contains many interesting features. 
 
+#### Functionalities
+  InfinityBot has special commands that will soon make your life easier on Discord. For example, it has a command that allows you to copy servers, which is useful for having a backup server. Speaking of backup, I present the backup command which allows to save in a document your server, the bot can save up to 5 backups per server. Obviously it contains the basic commands of a moderation bot, but still improved (you'll love the ban command). InfinityBot also has a command to detect the selfbots in your servers and ban them, it can also generate a captcha when a user enters the server, a firewall. In short InfinityBot is the bot you need.
+
 #### Dependencies
   You will need `git`, `Nodejs` and `npm` (Node & npm are installed together on windows). There's many tutorials to install them for your platform on internet.
 
