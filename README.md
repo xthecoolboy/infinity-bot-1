@@ -23,3 +23,4 @@ How to install
 ### Config.json Fields
 | Field | Value | Exemple |
 | ------ | ------- | ------- |
+| token | Your bot token, which is found on [Discord'website](https://discordapp.com/developers/applications/) | "NTkxNTMwnqoHsdNNTk4MTQ0.XRR95g.fh5aH6PeHtRd2qPRANgHEGwfI" (this is a fake) |
