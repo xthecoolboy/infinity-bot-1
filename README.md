@@ -32,3 +32,11 @@ How to install
 | embed.color | Html color for bot's embeds | #000000 (black)  |
 | embed.footer | The footer for bot's embeds | Discord Hack Week |
 | prefix | The prefix you want to your bot answer | $ |
+
+* After that, reopen a terminal (if you closed it) go to your bot's folder (with `cd /path/` command) and input : `npm start` Normally, the bot has started.
+
+#### You have successfully added Infinity Bot (or the name you wanted for it) !
+
+## Bot's Commands
+| Command | Function | Parameters Exemples |
+| ------- | -------- | ------------------- |
