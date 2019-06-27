@@ -10,9 +10,16 @@ Infinity Bot
 ### Infinity Bot is here to help you in everyday life on Discord, it contains many interesting features. 
 
 #### Dependencies
-  You only need `git`. There's many tutorials to install it for your platform on internet.
+  You will need `git`, `Nodejs` and `npm` (Node & npm are installed together on windows). There's many tutorials to install them for your platform on internet.
 
 How to install 
 --------------
 
-* Start your terminal/cmd and input this command `mkdir "InfinityBot" && cd InfinityBot && git clone https://github.com/discord-hack-week-jocke-iko/infinity-bot.git`
+* Start your terminal/cmd and input this command : `mkdir "InfinityBot" && cd InfinityBot && git clone https://github.com/discord-hack-week-jocke-iko/infinity-bot.git`.
+
+* Then, input this command : `npm install`.
+
+* Then, go to your folder InfinityBot and search for a file called : `config.json`. You have to complete fields.
+### Config.json Fields
+| Field | Value | Exemple |
+| ------ | ------- | ------- |
