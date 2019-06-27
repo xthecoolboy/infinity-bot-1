@@ -15,4 +15,4 @@ Infinity Bot
 How to install 
 --------------
 
->> * Start your terminal/cmd and input this command `mkdir "InfinityBot" && cd InfinityBot && git clone https://github.com/discord-hack-week-jocke-iko/infinity-bot.git`
+> * Start your terminal/cmd and input this command `mkdir "InfinityBot" && cd InfinityBot && git clone https://github.com/discord-hack-week-jocke-iko/infinity-bot.git`
