@@ -40,3 +40,5 @@ How to install
 ## Bot's Commands
 | Command | Function | Parameters Exemples |
 | ------- | -------- | ------------------- |
+
+*Comming Soon...*
