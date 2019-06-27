@@ -9,3 +9,5 @@ Infinity Bot
 <br>
 
 This bot works with Discord.js v12.0.0-dev
+<br>
+<iframe src="https://discordapp.com/widget?id=591537647994798101&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
