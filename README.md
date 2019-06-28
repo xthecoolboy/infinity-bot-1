@@ -41,10 +41,7 @@ How to install
 #### You have successfully added Infinity Bot (or the name you wanted for it) !
 
 ## Bot's Commands
-| Command | Function | Parameters Exemples |
-| ------- | -------- | ------------------- |
-
-*Comming Soon...*
+  Type the help command and for Each command you can do `help commandName` to get informations
 
 
 [INFINITY BOT VIDÉO DOWNLOAD](https://www.youtube.com/watch?v=T0PAUKppkVw)
