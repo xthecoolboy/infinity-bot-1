@@ -47,4 +47,4 @@ How to install
 *Comming Soon...*
 
 
-![YTB](https://www.youtube.com/watch?v=T0PAUKppkVw)
+[INFINITY BOT VIDÉO DOWNLOAD](https://www.youtube.com/watch?v=T0PAUKppkVw)
