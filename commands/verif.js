@@ -21,7 +21,7 @@ exports.execute = async (client, msg, args) => {
 
     if(!channel || !role) return;
 
-    if(!msg.member.roles.has(role.id)) return;
+    if(!msg.member.roles.has(rorandomle.id)) return;
     if(msg.channel.id != channel.id) return;
 
     if(!args[1]){

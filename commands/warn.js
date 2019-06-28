@@ -32,7 +32,7 @@ exports.execute = (client, msg, args) => {
     db.get(guild).get(member.user.id).unshift({
         reason : fReason,
         date : moment().format("L") + " | " + moment().format("LT"),
-        Mod : msg.author.id
+        Mod : msg.author.tag
     }).write()
 
     var embed = new Discord.MessageEmbed()
@@ -40,7 +40,7 @@ exports.execute = (client, msg, args) => {
         .setAuthor('New Warn', client.user.avatarURL())
         .addField("Member Warned", member.user.tag)
         .addField("Reason", fReason)
-        .addField("By Mod", msg.author.username)
+        .addField("By Mod", msg.author.tag)
         .setFooter(config.embed.footer)
     msg.channel.send(embed)
 }

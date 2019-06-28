@@ -42,14 +42,14 @@ exports.execute = (client, msg, args) => {
         var gEmbed = new Discord.MessageEmbed() // Embed envoyé dans le serv
             .setColor(config.embed.color)
             .setAuthor("Backup Command", client.user.avatarURL())
-            .setDescription(`${config.emojis.aCheck} Backup Created !`)
+            .setDescription(`Backup Created !`)
             .setFooter(config.embed.footer)
         msg.channel.send(gEmbed)
 
         var mEmbed = new Discord.MessageEmbed() // Embed envoyé à l'admin
             .setColor(config.embed.color)
             .setAuthor("Backup Command", client.user.avatarURL())
-            .setDescription(`${config.emojis.aCheck} Backup Created !`)
+            .setDescription(`Backup Created !`)
             .addField("Guild Name", `\`${msg.guild.name}\``)
             .addField("Restore code", `\`${code}\``)
             .addField("Backup Name", `\`${backupID}\``)

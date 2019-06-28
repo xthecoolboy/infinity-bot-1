@@ -1,3 +1,8 @@
+
+/*
+    This Discord Bot is developed by JockeRider199#2627 for Discord Hack Week.
+*/
+
 /////////////////////////////////REQUIREMENTS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 const Discord = require("discord.js"),
 ms = require("ms"),
@@ -7,7 +12,8 @@ chalk = require("chalk"),
 moment = require("moment"),
 fs = require("fs"),
 low = require("lowdb"),
-FileSync = require("lowdb/adapters/FileSync");
+FileSync = require("lowdb/adapters/FileSync"),
+npmPackage = require("./package.json");
 
 moment.locale("en")
 var cooldown = new Set()
@@ -15,7 +21,24 @@ var cooldown = new Set()
 /////////////////////////////////FUNCTIONS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 var logger = require("./functions/console-logger");
 var selfbots = require("./functions/selfbot");
-var random = require("./functions/utils");
+var utils = require("./functions/utils");
+
+//
+
+function consoleConnect(){
+    console.log("\n-------------------------------------------------")
+    console.log(chalk.blue(`--> Discord Bot by JockeRider199`))
+    console.log(chalk.green(`--> Connected to Discord's API`))
+    console.log("-------------------------------------------------")
+    console.log(`--> Bot Name :      [ ${client.user.tag} ]`)
+    console.log(`--> Bot ID :        [ ${client.user.id} ]`)
+    console.log(`--> Commands size : [ ${client.commands.length} ]`)
+    console.log(`--> Bot's prefix :  [ ${config.prefix} ]`)
+    console.log(`--> Guilds size :   [ ${client.guilds.size} ]`)
+    console.log(`--> Bot's version : [ ${npmPackage.version} ]`)
+    console.log("-------------------------------------------------")
+    console.log(chalk.green(`=> READY\n`))
+}
 
 /////////////////////////////////COMMANDS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function loadCmds(){
@@ -36,12 +59,12 @@ function loadCmds(){
 function loadDbs(){
     client.databases = [];
     fs.readdir("./database/", (err, files) => {
-        if(files.length = 0) return
         if(err) console.log(err);
         files.forEach(f => {
             delete require.cache[require.resolve(`./database/${f}`)];
             const dbName = f.split(".")[0];
             const db = require(`./database/${f}`)
+            //console.log(`Db loaded : ${dbName}`);
             client.databases.push(db);
         })
     });
@@ -59,8 +82,7 @@ client.on("ready", () => {
     loadDbs()
     setTimeout(() => {
         console.clear()
-        
-        logger.sucess(`Connected to ${client.user.tag}\n${moment().format("LT")}`);
+        consoleConnect()
         game1()
     }, ms("1s"));
 });
@@ -85,7 +107,6 @@ function game2(){
             url : "https://twitch.tv/bot developed by Jocke & Iko"
         },
         status : config.presence.status
-
     });
     setTimeout(game3, 4000)
 }
@@ -204,7 +225,16 @@ process.stdin.on('data', terminalInputRaw => {
     if(cmdName == "infos"){
         console.log(`\nDiscord : ${Discord.version}\n`)
     }
-    if(cmdName == "test"){}
+    if(cmdName == "eval"){
+        try{
+            let codein = args.slice(1).join(" ")
+            let code = eval(codein)
+            if(typeof code != "string") code = require("util").inspect(code)
+            console.log(code)
+        }catch(e){
+            console.error(e)
+        }
+    }
 })
 
 

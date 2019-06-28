@@ -2,6 +2,7 @@
   "591537647994798101": {
     "detectAndBanSelfbots": true,
     "enableBlacklist": true,
-    "enableCaptcha" : true
+    "enableCaptcha": true,
+    "enableTickets": true
   }
 }

@@ -1,7 +1,8 @@
 const Discord = require("discord.js"),
 config = require("../config"),
 low = require("lowdb"),
-FileSync = require("lowdb/adapters/FileSync");
+FileSync = require("lowdb/adapters/FileSync"),
+ms = require("ms")
 
 exports.execute = (client, msg, args) => {
 
@@ -10,7 +11,7 @@ exports.execute = (client, msg, args) => {
     if(!msg.member.permissions.has("ADMINISTRATOR")) return msg.channel.send("This command requrie ADMINISTRATOR permission.")
 
     var setting = args[1];
-    var acceptedSettings = ["captcha"];
+    var acceptedSettings = ["captcha", "tickets"];
     var menu = ""
     acceptedSettings.forEach(s => {
         menu += "- " + s + "\n"
@@ -28,6 +29,9 @@ exports.execute = (client, msg, args) => {
         switch(setting){
             case "captcha":
                 captcha()
+                break;
+            case "tickets":
+                tickets()
                 break;
             default:
                 break;
@@ -84,6 +88,31 @@ exports.execute = (client, msg, args) => {
             })
         })
         return;
+    }
+
+    function tickets(){
+        var adapter = new FileSync("./database/tickets.json");
+        var db = low(adapter);
+
+        msg.channel.send("Please, type de name of the category, where tickets will be created")
+        var channelCollector = new Discord.MessageCollector(msg.channel, m => msg.author.id == m.author.id, {time : 20000})
+        channelCollector.on("collect", message => {
+            channelCollector.stop()
+            var channel = msg.guild.channels.find(c => c.type == "category" && c.name == message.content)
+            if(!channel){
+                msg.channel.send("This category doesn't exist !")
+            }   
+            db.set(msg.guild.id, {category : channel.id}).write()
+
+            msg.channel.send("Please, type the message that users will see when they create a ticket")
+            var msgCollector = new Discord.MessageCollector(msg.channel, m => msg.author.id == m.author.id, {time : ms("4min")})
+
+            msgCollector.on("collect", message => {
+                msgCollector.stop()
+                db.get(msg.guild.id).update("msg", () => message.content).write()
+                msg.channel.send({embed : {description : "Modification of the settings completed"}})
+            })
+        })
     }
 }
 

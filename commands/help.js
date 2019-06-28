@@ -11,6 +11,8 @@ exports.execute = (client, msg, args, config) => {
         var adminCmds = []
         var modCmds = []
         var othersCmds = []
+        var ownerCmds = []
+        var ticketCmds = []
 
         client.commands.forEach(cmd => {
 
@@ -26,6 +28,12 @@ exports.execute = (client, msg, args, config) => {
                         modCmds.push("`" + cmd.info.name + `\``)
                         break;
                     case "invisible":
+                        break;
+                    case "owner":
+                        ownerCmds.push("`" + cmd.info.name + "`")
+                        break;
+                    case "ticket":
+                        ticketCmds.push("`" + cmd.info.name + "`")
                         break;
                     default:
                         othersCmds.push("`" + cmd.info.name + `\``);
@@ -44,6 +52,8 @@ exports.execute = (client, msg, args, config) => {
             .addField(`Infos Commands (${infoCmds.length})`, infoCmds.join(", "))
             .addField(`Admin Commands (${adminCmds.length})`, adminCmds.join(", "))
             .addField(`Moderation Commands (${modCmds.length})`, modCmds.join(", "))
+            .addField(`Tickets Commands (${ticketCmds.length})`, ticketCmds.join(", "))
+            .addField(`Owner Commands (${ownerCmds.length})`, ownerCmds.join(", "))
             if(othersCmds.length > 0){
                 embed.addField(`Others Commands (${othersCmds.length})`, othersCmds.join(", "))
             }

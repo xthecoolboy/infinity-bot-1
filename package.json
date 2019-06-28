@@ -1,6 +1,6 @@
 {
     "name": "infinity-bot",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "A discord bot for the Discord Hacking Week",
     "main": "index.js",
     "scripts": {
@@ -11,7 +11,7 @@
       "type": "git",
       "url": "git+https://github.com/discord-hack-week-jocke-iko/infinity-bot.git"
     },
-    "authors": "Jockerider199 & Iko",
+    "authors": "Jockerider199, Iko, VasToX",
     "license": "MIT",
     "bugs": {
       "url": "https://github.com/discord-hack-week-jocke-iko/infinity-bot/issues"

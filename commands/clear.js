@@ -1,7 +1,7 @@
 const Discord = require("discord.js"),
 config = require("../config.json");
 
-exports.execute = (client, msg, args, config) => {
+exports.execute = async (client, msg, args, config) => {
 
     msg.delete().catch(() => {});
 
@@ -9,6 +9,7 @@ exports.execute = (client, msg, args, config) => {
 
     if(!nbre) return msg.channel.send("You have to tell me the number of messages to delete !")
     if(isNaN(nbre)) return msg.channel.send("This is not a number !")
+
     if(nbre > 100) return msg.channel.send("I can't delete more than 100 messages !")
 
     msg.channel.bulkDelete(nbre).then(deleted => {

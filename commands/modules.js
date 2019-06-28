@@ -20,7 +20,7 @@ exports.execute = (client, msg, args, config) => {
     }
     
 
-    var modules = ["detectAndBanSelfbots", "enableBlacklist", "enableCaptcha"]
+    var modules = ["detectAndBanSelfbots", "enableBlacklist", "enableCaptcha", "enableTickets"]
     var chosenModule = args[1]
     var status = args[2]
     var truefalse = ["true", "false"]  
@@ -61,7 +61,7 @@ exports.info = {
 }
 
 exports.help = {
-    desc : "Enable/disable modules\nList of modules : \n- detectAndBanSelfbots;\n- enableBlacklist;\n- enableCaptcha",
+    desc : "Enable/disable modules\nList of modules : \n- detectAndBanSelfbots;\n- enableBlacklist;\n- enableCaptcha;\n- enableTickets;",
     usage : config.prefix + "modules <module name> <true | false>",
     ex : config.prefix + "modules detectAndBanSelfbots false",
     cat : "admin"
