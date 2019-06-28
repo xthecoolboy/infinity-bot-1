@@ -3,8 +3,6 @@
     "OwnersID" : [],
     "presence" : {
         "activity" : "DISCORD HACK WEEK",
-        "activity2" : "{prefix}help | {cmd} commands",
-        "activity3" : "Developed by Jocke & Iko",
         "status" : "",
         "type" : ""
     },
@@ -13,13 +11,6 @@
         "footer" : ""
     },
     "prefix" : "",
-    "emojis" : {
-        "processor" : "<:processor:591634904052269067>",
-        "gear" : "<:1gear:591636541072211988>",
-        "graph" : "<:graph:591637293337542673>",
-        "hourglass" : "<:1hourglass:591637689812516873>",
-        "aCheck" : "<a:check:593408092083978250>"
-    },
     "code" : {
         "start" : "```\n",
         "end" : "\n```",
