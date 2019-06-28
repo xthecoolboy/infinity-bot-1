@@ -97,30 +97,6 @@ function game1(){
         status : config.presence.status
 
     });
-    setTimeout(game2, 4000)
-}
-function game2(){
-    client.user.setPresence({
-        activity : {
-            name : config.presence.activity2.replace("{prefix}", config.prefix).replace("{cmd}", client.commands.length),
-            type : config.presence.type,
-            url : "https://twitch.tv/bot developed by Jocke & Iko"
-        },
-        status : config.presence.status
-    });
-    setTimeout(game3, 4000)
-}
-function game3(){
-    client.user.setPresence({
-        activity : {
-            name : config.presence.activity3,
-            type : config.presence.type,
-            url : "https://twitch.tv/bot developed by Jocke & Iko"
-        },
-        status : config.presence.status
-
-    });
-    setTimeout(game1, 4000)
 }
 
 /////////////////////////////////COMMANDS HANDLER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
