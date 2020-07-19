@@ -1,16 +1,16 @@
 {
     "token" : "",
-    "OwnersID" : [],
+    "OwnersID" : [376384142599782410],
     "presence" : {
         "activity" : "DISCORD HACK WEEK",
-        "status" : "",
-        "type" : ""
+        "status" : "walking",
+        "type" : "STREAMING"
     },
     "embed" : {
         "color" : "",
         "footer" : ""
     },
-    "prefix" : "",
+    "prefix" : "*",
     "code" : {
         "start" : "```\n",
         "end" : "\n```",
