@@ -19,7 +19,7 @@
     "homepage": "https://github.com/discord-hack-week-jocke-iko/infinity-bot#readme",
     "dependencies": {
       "chalk": "^2.4.2",
-      "discord.js": "^12.0.0",
+      "discord.js": "12.0.0",
       "fs": "^0.0.1-security",
       "moment": "^2.24.0",
       "ms": "^2.1.2",
