@@ -71,7 +71,7 @@ function loadDbs(){
 };
 
 /////////////////////////////////LOGIN\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-client.login(config.token);
+client.login(process.env.BOT_TOKEN);
 
 client.on("ready", () => {
     if(Discord.version != "12.0.0-dev"){
